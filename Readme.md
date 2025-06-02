@@ -19,8 +19,8 @@
 
 # [Day 4]
 ### Topic: manual setup of vm server setup
--Learned: ssh, netword
--Question: how to setup ubuntu server in vm
+- Learned: ssh, netword
+- Question: how to setup ubuntu server in vm
 - Next: Practice
 
 # [Day 5]
@@ -32,3 +32,29 @@
 # [Day 6]
 ### Topic: how to partition a disk
 - Learned: cfdisk
+
+# [Day 7]
+### Topic: how to setup a basic wordpress site in ubuntu
+- Learned: setup of site on apache webserver
+
+# [Day 7]
+### Topic: how to setup html site
+- Learned: setup site first manually then using provisioning
+
+# [Day 8]
+### Topic: Json and Yaml
+- Learned: basic of json and yaml
+
+
+# [Day 9]
+### Topic: Vprofile Project
+- Learned: how to setup java app on linux 
+##### Stack used: 
+- 1. Nginx => Web Service
+- 2. Tomcat => Application Server
+- 3. RabbitMQ => Broker/Queing Agent
+- 4. Memcache => DB caching
+- 5. Elastic Search => Indexing /Search Service
+- 6. MySQL => SQL DB
+
+
