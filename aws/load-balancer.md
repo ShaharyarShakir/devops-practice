@@ -24,5 +24,6 @@
 - first launch the site on the ec2 instance
 - create AMI from it => similar to snapshot with metadata
 - lauch template
+:xa
 - then load balancer
 
