@@ -6,5 +6,16 @@
 - ec2
 - load balancer
 - route 53
-- amis
+- AMIs
 - autoscaling
+- s3
+## AWS refactoring
+- uses aws SASS and PAAS services to host
+- route 53
+- bean stack
+- RDS
+- EC2
+- Amazon MQ
+- Elastic Cache
+- s3 
+
