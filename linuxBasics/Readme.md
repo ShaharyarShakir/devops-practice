@@ -335,3 +335,5 @@ vim /etc/selinux/config
 ```
 lsof /path/to/dir
 ```
+# add user to a group
+- usermod -aG <groupname> <username>
