@@ -56,7 +56,8 @@
 - 4. Memcache => DB caching
 - 5. Elastic Search => Indexing /Search Service
 - 6. MySQL => SQL DB
-  # [Day 10]
+
+# [Day 10]
   ### Topic: Vprofile using vagrant provising
   - Learn how to launch a project using scripts only
     ### Stack used:
