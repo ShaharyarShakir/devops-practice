@@ -1,15 +1,11 @@
-
 {
   "name": "Python 3",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
-
   "features": {
     "ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {},
     "ghcr.io/va-h/devcontainers-features/uv:1": {}
   },
-
   "forwardPorts": [8888],
-
   "portsAttributes": {
     "8888": {
       "label": "Jupyter",
@@ -17,7 +13,12 @@
       "onAutoForward": "ignore"
     }
   },
-
-  "postCreateCommand": "uv pip install jupyterlab && nohup uv run --with jupyter jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &"
+  "postCreateCommand": "uv pip install jupyterlab && nohup uv run --with jupyter jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &",
+  "mounts": [
+    "source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
+  ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  }
 }
 
