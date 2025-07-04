@@ -1,0 +1,46 @@
+@Library('share') _
+pipeline {
+    agent any
+    stages {
+        stage('Code') {
+            steps {
+                script {
+                    clone("https://github.com/LondheShubham153/django-notes-app.git", "main")
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    docker__build("notes-app", "latest", "shaharyarshakir")
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'testing the code'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'deploying the code'
+                // sh 'docker compose up -d'
+            }
+        }
+
+       stage('Push to docker') {
+    steps {
+        script {
+            docker__push.call([
+                imageName: "shaharyarshakir/notes-app",
+                imageTag: "latest",
+                credentials: "dockerHubCred"  
+            ])
+        }
+    }
+}
+    } 
+} 
