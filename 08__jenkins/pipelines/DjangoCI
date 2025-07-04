@@ -1,0 +1,30 @@
+pipeline{
+    agent {label 'SILVER'}
+    stages{
+        stage('Code'){
+            steps{
+                echo 'cloning the repo'
+                git url: 'https://github.com/LondheShubham153/django-notes-app.git', branch: 'main'
+                echo 'success in cloning'
+            }
+        }
+                stage('Build'){
+                    steps{
+                        echo 'building the repo'
+                        sh 'docker build -t notes-app:latest .'
+                    }
+                }
+        stage('Test'){
+            steps{
+            echo 'testing the code'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo 'deploying the code'
+                sh 'docker compose up -d'
+            }
+        }
+
+    }
+}
