@@ -59,8 +59,12 @@
 
 # [Day 10]
   ### Topic: Vprofile using vagrant provising
-  - Learn how to launch a project using scripts only
+  - Learned: how to launch a project using scripts only
     ### Stack used:
     - same stack as above
+
+# [Day 11]
+### Topic: How the internet work
+- Learned: How we are connected to the world
 
 
