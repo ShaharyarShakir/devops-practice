@@ -67,4 +67,14 @@
 ### Topic: How the internet work
 - Learned: How we are connected to the world
 
-
+# [Day 12]
+#### Topic: Basic of networking
+- Learned: OSI Model, TCP/UCP
+  ### layers:
+  - Application
+  - Presentation
+  - Session
+  - Transport
+  - Network
+  - Data Link
+  - Physical
