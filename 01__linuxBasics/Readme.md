@@ -337,3 +337,9 @@ lsof /path/to/dir
 ```
 # add user to a group
 - usermod -aG <groupname> <username>
+
+# rsync
+```bash 
+ rsync -avz --progress --exclude "*.tmp" -e "ssh -i Downloads/docker-key.pem" ubuntu@13.221.74.136:/home/ubuntu/projects/backend-express/* ~/git-repo
+
+```
