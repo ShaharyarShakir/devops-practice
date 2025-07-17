@@ -1,0 +1,10 @@
+- name: Create a file
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create empty log file
+      file:
+        path: /tmp/sample.log
+        state: touch
+        mode: '0644'
+
