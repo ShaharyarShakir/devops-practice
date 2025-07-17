@@ -1,0 +1,8 @@
+- name: Add a group
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create group "developers"
+      group:
+        name: developers
+        state: present
