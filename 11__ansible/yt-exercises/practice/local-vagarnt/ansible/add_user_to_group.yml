@@ -1,0 +1,10 @@
+- name: Add user to group
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add "devuser" to "developers"
+      user:
+        name: devuser
+        groups: developers
+        append: yes
+
