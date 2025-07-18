@@ -1,0 +1,65 @@
+- name: Install and configure Nginx across different OS types
+  hosts: all
+  become: yes
+
+  tasks:
+
+    - name: Install Nginx on RedHat-based systems
+      package:
+        name: nginx
+        state: present
+      when: ansible_distribution in ["AlmaLinux", "Rocky", "CentOS", "RedHat"]
+
+    - name: Install Nginx on Debian-based systems
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+      when: ansible_distribution in ["Ubuntu", "Debian"]
+
+    - name: Start and enable Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy sample HTML page
+      copy:
+        src: files/index.html
+        dest: /usr/share/nginx/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
+        notify: Restart Nginx
+
+    - name: Open port 80 with firewalld (RedHat)
+      firewalld:
+        port: 80/tcp
+        permanent: yes
+        state: enabled
+      when: ansible_distribution in ["AlmaLinux", "Rocky", "CentOS", "RedHat"]
+
+    - name: Reload firewalld (RedHat)
+      service:
+        name: firewalld
+        state: reloaded
+      when: ansible_distribution in ["AlmaLinux", "Rocky", "CentOS", "RedHat"]
+
+    - name: Allow port 80 with UFW (Debian)
+      ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+      when: ansible_distribution in ["Ubuntu", "Debian"]
+
+    - name: Enable UFW (Debian)
+      ufw:
+        state: enabled
+      when: ansible_distribution in ["Ubuntu", "Debian"]
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
+
