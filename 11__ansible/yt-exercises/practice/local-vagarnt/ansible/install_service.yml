@@ -1,0 +1,9 @@
+- name: Install a service
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+
