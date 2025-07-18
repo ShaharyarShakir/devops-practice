@@ -1,0 +1,7 @@
+- name: Run a script on remote host
+  hosts: all
+  become: yes
+  tasks:
+    - name: Run custom script
+      script: ./scripts/setup.sh
+
