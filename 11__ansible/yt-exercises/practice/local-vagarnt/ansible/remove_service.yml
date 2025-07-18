@@ -1,0 +1,8 @@
+- name: Remove a service
+  hosts: all
+  become: yes
+  tasks:
+    - name: Remove nginx
+      package:
+        name: nginx
+        state: absent
