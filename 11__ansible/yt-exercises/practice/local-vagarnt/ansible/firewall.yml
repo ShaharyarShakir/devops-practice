@@ -1,0 +1,17 @@
+- name: Open firewall port
+  hosts: all
+  become: yes
+  tasks:
+    - name: Open port 80
+      firewalld:
+        port: 80/tcp
+        permanent: yes
+        state: enabled
+      when: ansible_os_family == "RedHat"
+
+    - name: Reload firewalld
+      service:
+        name: firewalld
+        state: reloaded
+      when: ansible_os_family == "RedHat"
+
