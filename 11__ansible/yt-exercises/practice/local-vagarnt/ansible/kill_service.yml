@@ -1,0 +1,7 @@
+- name: Kill a service process
+  hosts: all
+  become: yes
+  tasks:
+    - name: Kill nginx
+      shell: "pkill nginx"
+      ignore_errors: yes
