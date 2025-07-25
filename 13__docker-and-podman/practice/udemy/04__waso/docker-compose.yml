@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  waso:
+    build:
+      context: .
+    container_name: waso-site
+    ports:
+      - "8080:80"
+    volumes:
+      - apache_logs:/var/log/apache2
+    restart: unless-stopped
+
+volumes:
+  apache_logs:
