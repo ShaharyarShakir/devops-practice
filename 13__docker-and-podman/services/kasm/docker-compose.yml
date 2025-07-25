@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  kasm:
+    image: kasmweb/core:1.14.0
+    container_name: kasm
+    ports:
+      - "443:443"
+    volumes:
+      - kasm_data:/opt
+    restart: unless-stopped
+
+volumes:
+  kasm_data:
+
