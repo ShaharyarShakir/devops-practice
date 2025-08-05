@@ -49,18 +49,20 @@ Terraform is an **Infrastructure as Code** tool used to **provision and manage i
 
 ### 🧩 Example Use:
 
-````hcl
+```hcl
 resource "aws_instance" "web" {
   ami           = "ami-123456"
   instance_type = "t2.micro"
 }
+```
+
 ## ⚙️ Common Terraform Commands
 
 ### 📦 Initialize Terraform
 
 ```bash
 terraform init
-````
+```
 
 ### 🧠 Preview Infrastructure Changes
 
