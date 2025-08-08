@@ -2,3 +2,5 @@
 *.pem
 .Trash-100/
 node_modules/
+.devbox
+.terraform/
