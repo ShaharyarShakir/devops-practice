@@ -109,3 +109,8 @@ git branch -m oldname newname
 
 - The "heads" (or "tips") of branches are stored in the .git/refs/heads directory.
 - If you cat one of the files in that directory, you should be able to see the commit hash that the branch points to.
+#### how to commit on previous date 
+```bash
+GIT_AUTHOR_DATE="2025-09-03 12:00:00" GIT_COMMITTER_DATE="2025-09-03 12:00:00" git commit -m "commit message"
+```
+
