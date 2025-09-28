@@ -1,0 +1,14 @@
+name: Shell Script Workflow
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Execute the script
+        run: |
+          chmod +x ascii-script.sh
+          ./ascii-script.sh
+      - name: list files
+        run: ls -ltra
