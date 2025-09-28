@@ -1,0 +1,37 @@
+name: MultiJob Action
+on: push
+jobs:
+  build__job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install cowsay
+        run: sudo apt install -y cowsay
+      - name: Generate ASCII
+        run: cowsay -f dragon "I am a mighty red dragon. You have angered me. RWWWW!!!!!!" >> dragon.txt
+      - name: upload dragon-file
+        uses: actions/upload-artifact@v4
+        with:
+          name: dragon-tales
+          path: dragon.txt
+  test__job:
+    needs: build__job
+    runs-on: ubuntu-latest
+    steps:
+      - name: download dragon-file
+        uses: actions/download-artifact@v4
+        with:
+          name: dragon-tales
+      - name: finding match
+        run: grep -i "dragon" dragon.txt
+  deploy__job:
+    needs: test__job
+    runs-on: ubuntu-latest
+    steps:
+      - name: download dragon-file
+        uses: actions/download-artifact@v4
+        with:
+          name: dragon-tales
+      - name: read file
+        run: cat dragon.txt
+      - name: Deploying artifacts
+        run: echo "Deploying artifacts..."
