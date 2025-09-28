@@ -1,0 +1,13 @@
+name: First WorkFlow
+on: push
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check
+        run: actions/checkout@v4
+      - name: list and read files
+        run: |
+          echo "Listing and reading files"
+          ls -ltr
+          cat Readme.md
