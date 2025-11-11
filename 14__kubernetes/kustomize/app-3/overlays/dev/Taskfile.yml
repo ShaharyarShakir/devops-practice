@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  01:dev:create-namespace:
+    cmds:
+      - kubectl create ns dev 
+      -  kubectl config set-context --current --namespace=dev
+    desc: create namespaces for dev
+    
