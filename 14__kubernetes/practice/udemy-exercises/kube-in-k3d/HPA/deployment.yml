@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-app
+  labels:
+    app: express-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: express-app
+  template:
+    metadata:
+      labels:
+        app: express-app
+    spec:
+      containers:
+        - image: shaharyarshakir/express-app:3.0
+          name: express-app
+          resources:
+            requests:
+              cpu: 200m
+            limits:
+              cpu: 300m
+          ports:
+            - containerPort: 3000
