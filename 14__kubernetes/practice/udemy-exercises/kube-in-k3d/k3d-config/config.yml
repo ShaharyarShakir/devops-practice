@@ -1,0 +1,23 @@
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: mycluster-k3d-udemy
+servers: 1
+agents: 3
+image: rancher/k3s:v1.20.4-k3s1
+
+kubeAPI:
+  hostIP: "127.0.0.1"
+  hostPort: "6443"
+
+ports:
+  - port: 8080:80
+    nodeFilters:
+      - loadbalancer
+
+options:
+  k3d:
+    wait: true
+  kubeconfig:
+    updateDefaultKubeconfig: true
+    switchCurrentContext: true
