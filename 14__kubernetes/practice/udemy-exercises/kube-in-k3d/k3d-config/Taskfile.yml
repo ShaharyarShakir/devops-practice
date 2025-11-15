@@ -1,0 +1,17 @@
+version: "3"
+vars:
+  CLUSTER_NAME: mycluster-k3d-udemy
+tasks:
+  k3d:01-create-cluster:
+    cmds:
+      - k3d cluster create --config config.yml
+    desc: Create a k3d  cluster {{.CLUSTER_NAME}}
+  k3d:02-stop-cluster:
+    cmds:
+      - k3d cluster stop {{.CLUSTER_NAME}}
+    desc: Stop k3d cluter  {{.CLUSTER_NAME}}
+
+  k3d:delete-cluster:
+    cmds:
+      - k3d cluster delete {{.CLUSTER_NAME}}
+    desc: Delete the k3d cluster {{.CLUSTER_NAME}}
