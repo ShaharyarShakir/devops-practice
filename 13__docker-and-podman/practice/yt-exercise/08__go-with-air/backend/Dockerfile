@@ -1,0 +1,14 @@
+FROM golang:1.25-alpine
+
+WORKDIR /app
+RUN go install github.com/air-verse/air@latest
+
+COPY go.* ./
+
+RUN go mod download
+
+COPY . .
+
+EXPOSE 5000
+
+CMD ["air", "-c", ".air.toml"]
