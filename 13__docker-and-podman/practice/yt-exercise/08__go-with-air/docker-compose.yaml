@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app:z  
+    ports:
+      - "5000:5000"
+    networks:
+      - appnet
+    
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app:z  
+    ports:
+      - "80:80"
+    networks:
+      - appnet
+
+networks:
+  appnet:
+
+volumes:
+  backend_tmp:
