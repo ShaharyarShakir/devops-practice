@@ -1,0 +1,52 @@
+{
+  "name": "K3d container",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+
+  // Use the default user
+  "remoteUser": "vscode",
+
+  // Features: Docker, kubectl, neovim, zsh via common-utils
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": true,
+      "moby": true
+    },
+    "ghcr.io/devcontainers-extra/features/kubectl-asdf:2": {},
+    "ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "upgradePackages": "true",
+      "installZsh": true
+    }
+  },
+
+  // Set default login shell for 'vscode' user before container starts
+//  "initializeCommand": "sudo chsh -s $(which zsh) vscode",
+
+  // Install k3d
+   "postCreateCommand": "sudo chsh -s /bin/zsh vscode && wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash",
+
+  // Forward NGINX + common dev ports
+  "forwardPorts": [8080, 8443, 3000, 8000],
+
+  // Mount kube config and data directory
+  "mounts": [
+    //"source=${localWorkspaceFolder}/.kube,target=/home/vscode/.kube,type=bind",
+    "source=${localWorkspaceFolder}/data,target=/workspace/data,type=bind"
+  ],
+
+  // Use zsh as default shell 
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/bin/zsh"
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  }
+}
+
