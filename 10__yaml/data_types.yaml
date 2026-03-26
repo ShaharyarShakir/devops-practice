@@ -1,3 +1,25 @@
 service_name: mobile_native
 decription: "yaml for react native expo"
 tagline: "write one run everywhere"
+
+instructions: |
+  - build artifacts to test on device
+  - scan qr code with expo client
+  - run on web browser
+
+instruction_dev: >
+  - create dev build 
+  - scan qr code with expo client
+  - run on web browser
+
+connected_device: 3
+colors: 0xFFFe4
+
+is_connected: true
+is_working: yes
+instant: no
+
+iso: null
+mac: ~
+
+connection_time: 2025-01-06
