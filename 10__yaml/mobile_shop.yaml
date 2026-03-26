@@ -1,0 +1,31 @@
+mobile_shop:
+  name: "Mobile Haven"
+  location:
+    address: "123 haven street"
+    city: "New York"
+    state: "NY"
+    zip: "10001"
+  coordinates:
+    lat: 19.0347
+    lng: 72.8596
+
+operating_hours:
+  monday_to_friday:
+    open: "09:00"
+    close: "20:00"
+  weekend:
+    open: "10:00"
+    close: "18:00"
+
+deals:
+  - name: "Black Friday Sale"
+    description: "Up to 50% off on all mobile phones"
+    discount: 50
+    valid_from: "2023-11-24"
+    valid_till: "2023-11-25"
+
+  - name: "Cyber Monday Deal"
+    description: "Special offers on latest smartphones"
+    discount: 30
+    valid_from: "2023-11-28"
+    valid_till: "2023-11-28"
