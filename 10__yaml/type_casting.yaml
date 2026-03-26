@@ -1,0 +1,6 @@
+zip_code: !!str 123456
+
+unique_places: !!set
+  ? New York
+  ? London
+  ? Tokyo
