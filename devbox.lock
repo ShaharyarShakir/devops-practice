@@ -1,0 +1,57 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-03-23T13:48:00Z",
+      "resolved": "github:NixOS/nixpkgs/fdc7b8f7b30fdbedec91b71ed82f36e1637483ed?lastModified=1774273680&narHash=sha256-a%2B%2BtZ1RQsDb1I0NHrFwdGuRlR5TORvCEUksM459wKUA%3D"
+    },
+    "mise@latest": {
+      "last_modified": "2026-03-23T13:48:00Z",
+      "resolved": "github:NixOS/nixpkgs/fdc7b8f7b30fdbedec91b71ed82f36e1637483ed#mise",
+      "source": "devbox-search",
+      "version": "2026.3.10",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f4g63jp9n2fa68b84k77r6zm9vvcg0pf-mise-2026.3.10",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/f4g63jp9n2fa68b84k77r6zm9vvcg0pf-mise-2026.3.10"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/brkc722v82y52kbxq2w8shgi6byayk3v-mise-2026.3.10",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/brkc722v82y52kbxq2w8shgi6byayk3v-mise-2026.3.10"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fvihiznp33zs0py26k61khjg77awlvzh-mise-2026.3.10",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/fvihiznp33zs0py26k61khjg77awlvzh-mise-2026.3.10"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/z37h7vzwa89n2zm81n7qqhasnf1y3k71-mise-2026.3.10",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/z37h7vzwa89n2zm81n7qqhasnf1y3k71-mise-2026.3.10"
+        }
+      }
+    }
+  }
+}
