@@ -1,3 +1,5 @@
 [tools]
+bun = "latest"
 kind = "latest"
 kubectl = "latest"
+node = "latest"
