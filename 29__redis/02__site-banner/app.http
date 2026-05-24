@@ -1,0 +1,17 @@
+###
+POST http://localhost:3000/banner
+
+Content-Type: application/json
+
+{
+    "message": "Welcome to my site"
+}
+
+###
+GET http://localhost:3000/banner
+
+###
+GET http://localhost:3000/banner/exists
+
+### 
+DELETE http://localhost:3000/banner
