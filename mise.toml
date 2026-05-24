@@ -1,6 +1,9 @@
 [tools]
 bun = "latest"
+colima = "latest"
+k9s = "latest"
 kind = "latest"
 kubectl = "latest"
+lima = "latest"
 node = "latest"
 uv = "latest"
