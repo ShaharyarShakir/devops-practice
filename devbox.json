@@ -2,7 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.0/.schema/devbox.schema.json",
   "packages": [
     "mise@latest",
-    "colima@latest"
+    "colima@latest",
+    "kubectl@latest",
+    "kind@latest"
   ],
   "shell": {
     "init_hook": [
